@@ -2,12 +2,13 @@ import { RegistrationInfo } from "../../components/RegistrationInfo/Registration
 import { AppButton } from "../../components/UI/AppButton/AppButton";
 import { AppInput } from "../../components/UI/AppInput/AppInput";
 import { Heading } from "../../components/UI/Heading/Heading";
-import "./RegistrationPage.scss";
+import {SRegistrationPage} from "./RegistrationPage.style"
+
 
 
 export const RegistrationPage = () => {
   return (
-    <div className="RegistrationPage">
+    <SRegistrationPage>
       <Heading headingText="Регистрация" headingType="h1"/>
       <form action="#">
         <AppInput inputValue="" placeholder="Имя и фамилия" type="text"/>
@@ -16,6 +17,6 @@ export const RegistrationPage = () => {
         <AppButton buttonText="Зарегистрироваться" isDisabled />
       </form>
       <RegistrationInfo path="#" textLogin="Регистрация с помощью" authorizeText="Войти" profile="Уже есть аккаунт? "/>
-    </div>
+    </SRegistrationPage>
   );
 };

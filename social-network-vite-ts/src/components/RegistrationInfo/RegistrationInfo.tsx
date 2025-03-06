@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { SRegistrationInfo } from "./Registration.style";
 
 interface IRegistrationInfoProps {
     path: string;
@@ -9,7 +10,7 @@ interface IRegistrationInfoProps {
 
 export const RegistrationInfo = ({path,textLogin,authorizeText,profile}: IRegistrationInfoProps) => {
   return (
-    <div className="registration">
+    <SRegistrationInfo>
       <span>
         {profile} <Link to={path}>{authorizeText}</Link>
       </span>
@@ -28,6 +29,6 @@ export const RegistrationInfo = ({path,textLogin,authorizeText,profile}: IRegist
           <img src="./img/icons/mail-ru.svg" alt="Mail.ru" />
         </a>
       </div>
-    </div>
+    </SRegistrationInfo>
   );
 };

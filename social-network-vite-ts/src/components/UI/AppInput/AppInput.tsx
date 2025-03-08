@@ -12,7 +12,7 @@ export const AppInput = ({
 }: IAppInputProps) => {
   return (
     <div>
-      <SAppInput {...props} />;
+      <SAppInput {...props} />
       {isError && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </div>
   );

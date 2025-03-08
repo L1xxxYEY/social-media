@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const SRegistrationPage = styled.div`
-  box-shadow: 0 0 10px ${props => props.theme.colors.lightGray};
+  box-shadow: 0 0 10px ${(props) => props.theme.colors.lightGray};
   border-radius: 20px;
-  background-color: ${props => props.theme.colors.elemsBgc};
+  background-color: ${(props) => props.theme.colors.elemsBgc};
   margin: 0 auto;
   width: 80%;
   max-width: 500px;
@@ -25,7 +25,7 @@ export const SRegistrationPage = styled.div`
     width: 100%;
     text-align: right;
     text-decoration: none;
-    color: ${props => props.theme.colors.gray};
+    color: ${(props) => props.theme.colors.gray};
 
     &:hover {
       text-decoration: underline;
@@ -38,5 +38,9 @@ export const SRegistrationPage = styled.div`
     width: 100%;
   }
 }
+`;
 
-`
+export const ErrorMessage = styled.p`
+  color: ${(props) => props.theme.colors.red};
+  margin-bottom: 10px;
+`;

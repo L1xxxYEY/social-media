@@ -12,10 +12,20 @@ interface IloginForm {
   userPassword: string;
 }
 
+
+
 const loginScheme = yup.object({
-  userEmail: yup.string().email("Введите корректно почту").required(),
-  userPassword: yup.string().min(4, "Минимум 4 цифры!").required(),
+  userEmail: yup
+    .string()
+    .email("Введите корректно почту")
+    .required("Обязательное поле"),
+  userPassword: yup
+    .string()
+    .min(4, "Минимум 4 цифры!")
+    .required("Обязательное поле"),
 });
+
+
 
 export const LoginPage = () => {
   const {
@@ -30,18 +40,20 @@ export const LoginPage = () => {
       userPassword: "",
     },
   });
-  
-const onLoginSubmit: SubmitHandler<IloginForm> = (data) => {
-  const payload = {
-    userEmail: data.userEmail,
-    userPassword: data.userPassword,
+
+  const onLoginSubmit: SubmitHandler<IloginForm> = (data) => {
+    const payload = {
+      userEmail: data.userEmail,
+      userPassword: data.userPassword,
+    };
+    console.log(payload);
   };
-}
 
   return (
     <SLoginPage>
       <Heading headingText="Авторизация" headingType="h1" />
       <form action="#" onSubmit={handleSubmit(onLoginSubmit)}>
+        
         <Controller
           name="userEmail"
           control={control}
@@ -55,6 +67,7 @@ const onLoginSubmit: SubmitHandler<IloginForm> = (data) => {
             />
           )}
         />
+
         <Controller
           name="userPassword"
           control={control}
@@ -68,6 +81,8 @@ const onLoginSubmit: SubmitHandler<IloginForm> = (data) => {
             />
           )}
         />
+
+
 
         <AppButton buttonText="Войти" isDisabled />
       </form>

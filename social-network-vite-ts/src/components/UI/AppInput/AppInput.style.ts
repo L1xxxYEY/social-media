@@ -18,5 +18,5 @@ export const SAppInput = styled.input`
 
 export const ErrorMessage = styled.p`
   color: ${(props) => props.theme.colors.red};
-  margin-top: 10px;
+  margin-bottom: 10px;
 `;
